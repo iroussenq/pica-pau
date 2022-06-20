@@ -1,0 +1,64 @@
+body {
+  font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+  background-image: url(https://i.pinimg.com/originals/2b/93/e0/2b93e0b6ded8310c25c131bd8146409a.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  background-color: wheat;
+  outline-style: solid;
+  outline-width: 5px;
+  outline-color: black;
+  margin-left: 700px;
+  margin-right: 700px;
+  text-align: center;
+  color: red;
+}
+.texto {
+  background-color: wheat;
+  outline-style: solid;
+  outline-width: 5px;
+  outline-color: black;
+  margin-left: 700px;
+  margin-right: 700px;
+  font-size: 25px;
+  text-align: center;
+  color: blue;
+}
+.campo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4px 9px;
+}
+.center {
+  border-radius: 90%;
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+.botao {
+  background-color: wheat;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: auto;
+  margin-top: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+#result {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: black;
+  background-color: wheat;
+  text-align: center;
+  margin: auto;
+  display: table;
+}
