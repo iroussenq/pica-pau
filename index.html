@@ -7,18 +7,24 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   </head>
   <body>
-    <h1>Pica Pau</h1>
-    <img
-      src="https://portalguara.com/wp-content/uploads/2022/02/pica-pau-3.jpg"
-      alt="PicaPauImg"
-      class="center"
-    />
+    <header>
+      <h1>Pica Pau</h1>
+      <img
+        src="https://portalguara.com/wp-content/uploads/2022/02/pica-pau-3.jpg"
+        alt="PicaPauImg"
+        class="center"
+      />
+    </header>
+
     <p class="texto">
       Validarei seu CPF sem questionamentos de forma legitima.
     </p>
     <input id="cpf" class="campo" type="text" placeholder="Digite seu CPF" />
-    <button class="botao" onclick="validar()">Validar</button>
-    <button class="botao" onclick="limpar()">Limpar</button>
+    <div class="butt">
+      <button class="botao" onclick="validar()">Validar</button>
+      <button class="botao" onclick="limpar()">Limpar</button>
+    </div>
+
     <p><span id="result"> </span></p>
     <script src="main.js"></script>
   </body>
