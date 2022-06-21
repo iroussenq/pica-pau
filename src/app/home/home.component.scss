@@ -1,0 +1,61 @@
+.main {
+  font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+
+  h1 {
+    background-color: rgb(240, 214, 169);
+    border: 1px solid black;
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(164, 32, 32);
+  }
+  .texto {
+    background-color: rgb(253, 219, 160);
+    border: 1px solid black;
+    margin: 5% 20%;
+    font-size: 25px;
+    text-align: center;
+    color: rgb(13, 13, 236);
+  }
+  .campo {
+    display: block;
+    margin: auto;
+    padding: 4px 9px;
+    border-radius: 10px;
+    background-color: rgb(253, 219, 160);
+  }
+  .center {
+    border-radius: 90%;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+  }
+  .botao {
+    background-color: rgba(245, 222, 179, 0.655);
+    border-radius: 12px;
+    display: block;
+    margin-bottom: auto;
+    margin-top: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    max-width: 150px;
+    cursor: pointer;
+  }
+  .botao:hover {
+    background-color: rgba(245, 222, 179, 0.855);
+    border: 1px solid red;
+  }
+  #result {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: black;
+    background-color: wheat;
+    text-align: center;
+    margin: auto;
+    display: table;
+  }
+}

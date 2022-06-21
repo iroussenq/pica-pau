@@ -1,0 +1,28 @@
+<div class="main">
+  <h1>Pica Pau</h1>
+
+  <img
+    src="https://portalguara.com/wp-content/uploads/2022/02/pica-pau-3.jpg"
+    alt="PicaPauImg"
+    class="center"
+  />
+
+  <p class="texto">Validarei seu CPF sem questionamentos de forma legitima.</p>
+
+  <input
+    [(ngModel)]="cpf"
+    id="cpf"
+    class="campo"
+    type="text"
+    placeholder="Digite seu CPF"
+  />
+
+  <div class="butt">
+    <button class="botao" (click)="validar()">Validar</button>
+    <button class="botao" (click)="limpar()">Limpar</button>
+  </div>
+
+  <p>
+    <span id="result"> {{ cpf }} </span>
+  </p>
+</div>
