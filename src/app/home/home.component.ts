@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     if (this.isCpfValid(this.cpf)) {
       this.cpf = this.format(this.cpf);
     } else {
-      this.cpf = "Seu cpf é invalido"
+      this.cpf = 'Seu cpf é invalido';
     }
   }
 
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
   }
 
   public extractNumbers(val: string): string {
-      return val ? val.replace(/\D+/g, '') : '';
+    return val ? val.replace(/\D+/g, '') : '';
   }
 
   private extractNumbersToList(value: string): number[] {
@@ -71,6 +71,6 @@ export class HomeComponent implements OnInit {
   }
 
   private distinct(digits: number[]): number[] {
-    return [...new Set(digits.map((i) => i))];
+    return [...new Set(digits)];
   }
 }

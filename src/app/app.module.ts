@@ -1,3 +1,8 @@
+import { ProdutoModule } from './produto/produto.module';
+import { FornecedorModule } from './fornecedor/fornecedor.module';
+import { FarmaceuticoModule } from './farmaceutico/farmaceutico.module';
+import { ClienteModule } from './cliente/cliente.module';
+import { MenuModule } from './menu/menu.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,7 +13,17 @@ import { SobreModule } from './sobre/sobre.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HomeModule, SobreModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HomeModule,
+    SobreModule,
+    MenuModule,
+    ClienteModule,
+    FarmaceuticoModule,
+    FornecedorModule,
+    ProdutoModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
