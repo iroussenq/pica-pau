@@ -1,6 +1,6 @@
 <div class="box">
   <h1>Pica Pau</h1>
-  <p>Cadastro de Fornecedor</p>
+  <p class="texto">Cadastro de Fornecedor</p>
   <form class="form-box" [formGroup]="formFornecedor" (ngSubmit)="cadastrar()">
     <input
       formControlName="nome"
@@ -21,6 +21,6 @@
     />
     <button type="submit">Cadastrar</button>
   </form>
-  <p>Result: {{ formFornecedor.getRawValue() | json }}</p>
-  <p>Form é valido? {{ formFornecedor.valid ? "Sim" : "Não" }}</p>
+  <p class="texto">Result: {{ formFornecedor.getRawValue() | json }}</p>
+  <p class="texto">Form é valido? {{ formFornecedor.valid ? "Sim" : "Não" }}</p>
 </div>

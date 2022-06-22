@@ -1,6 +1,6 @@
 <div class="box">
   <h1>Pica Pau</h1>
-  <p>Cadastro de Farmaceutico</p>
+  <p class="texto">Cadastro de Farmaceutico</p>
   <form
     class="form-box"
     [formGroup]="formFarmaceutico"
@@ -20,6 +20,8 @@
     />
     <button type="submit">Cadastrar</button>
   </form>
-  <p>Result: {{ formFarmaceutico.getRawValue() | json }}</p>
-  <p>Form é valido? {{ formFarmaceutico.valid ? "Sim" : "Não" }}</p>
+  <p class="texto">Result: {{ formFarmaceutico.getRawValue() | json }}</p>
+  <p class="texto">
+    Form é valido? {{ formFarmaceutico.valid ? "Sim" : "Não" }}
+  </p>
 </div>

@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 body {
   background-image: url(https://i.pinimg.com/originals/2b/93/e0/2b93e0b6ded8310c25c131bd8146409a.jpg);
   height: 100%;
@@ -9,4 +10,45 @@ body {
   background-attachment: fixed;
   font-family: "Courier New", Courier, monospace;
   font-size: 18;
+}
+h1 {
+  background-color: rgb(240, 214, 169);
+  border: 1px solid black;
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(164, 32, 32);
+}
+.texto {
+  background-color: rgb(253, 219, 160);
+  border: 1px solid black;
+  margin: 5% 20%;
+  font-size: 25px;
+  text-align: center;
+  color: rgb(13, 13, 236);
+}
+.form-box {
+  background-color: rgb(243, 236, 138);
+  margin: 0 auto;
+  width: 370px;
+  padding: 15px 0;
+  border: solid 1px #ddd;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  input {
+    width: 300px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 22px;
+    border-radius: 10px;
+    border: solid 1px rgb(199, 195, 195);
+    display: block;
+  }
+  button {
+    padding: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  .ng-touched.ng-invalid {
+    background-color: rgb(161, 26, 26);
+  }
 }
