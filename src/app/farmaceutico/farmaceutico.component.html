@@ -20,8 +20,31 @@
     />
     <button type="submit">Cadastrar</button>
   </form>
-  <p class="texto">Result: {{ formFarmaceutico.getRawValue() | json }}</p>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Data de Nascimento</th>
+      <th>CPF</th>
+      <th>Oferta do Dia</th>
+      <th>Documento Valido</th>
+    </tr>
+    <tr *ngFor="let farmaceutico of list">
+      <td>{{ farmaceutico.id }}</td>
+      <td>{{ farmaceutico.nome }}</td>
+      <td>{{ farmaceutico.idade }}</td>
+      <td>{{ farmaceutico.niver }}</td>
+      <td>{{ farmaceutico.documento }}</td>
+      <td>{{ farmaceutico.ofertaDia }}</td>
+      <td>{{ farmaceutico.documentoValido }}</td>
+    </tr>
+  </table>
   <p class="texto">
-    Form é valido? {{ formFarmaceutico.valid ? "Sim" : "Não" }}
+    {{
+      formFarmaceutico.valid
+        ? "Cadastrado com sucesso"
+        : "Informações não validas"
+    }}
   </p>
 </div>
