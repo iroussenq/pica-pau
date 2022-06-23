@@ -20,8 +20,31 @@
       placeholder="Data de Nascimento"
       type="date"
     />
-    <button type="submit">Cadastrar</button>
+    <button type="submit" [disabled]="!formCliente.valid">Cadastrar</button>
   </form>
-  <p class="texto">Result: {{ formCliente.getRawValue() | json }}</p>
-  <p class="texto">Form é valido? {{ formCliente.valid ? "Sim" : "Não" }}</p>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Data de Nascimento</th>
+      <th>CPF</th>
+      <th>Email</th>
+      <th>Documento Valido</th>
+    </tr>
+    <tr *ngFor="let cliente of list">
+      <td>{{ cliente.id }}</td>
+      <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.idade }}</td>
+      <td>{{ cliente.niver }}</td>
+      <td>{{ cliente.documento }}</td>
+      <td>{{ cliente.email }}</td>
+      <td>{{ cliente.documentoValido }}</td>
+    </tr>
+  </table>
+  <p class="texto">
+    {{
+      formCliente.valid ? "Cadastrado com sucesso" : "Informações não validas"
+    }}
+  </p>
 </div>
