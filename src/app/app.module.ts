@@ -1,3 +1,4 @@
+import { ExtrasModule } from './extras/extras.module';
 import { ProdutoModule } from './produto/produto.module';
 import { FornecedorModule } from './fornecedor/fornecedor.module';
 import { FarmaceuticoModule } from './farmaceutico/farmaceutico.module';
@@ -23,6 +24,7 @@ import { SobreModule } from './sobre/sobre.module';
     FarmaceuticoModule,
     FornecedorModule,
     ProdutoModule,
+    ExtrasModule
   ],
   providers: [],
   bootstrap: [AppComponent],

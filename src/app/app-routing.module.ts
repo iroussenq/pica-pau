@@ -1,3 +1,4 @@
+import { ExtrasComponent } from './extras/extras.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { FornecedorComponent } from './fornecedor/fornecedor.component';
 import { FarmaceuticoComponent } from './farmaceutico/farmaceutico.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'farmaceutico', component: FarmaceuticoComponent },
   { path: 'fornecedor', component: FornecedorComponent },
   { path: 'produto', component: ProdutoComponent },
+  { path : 'extras', component: ExtrasComponent}
 ];
 
 @NgModule({
