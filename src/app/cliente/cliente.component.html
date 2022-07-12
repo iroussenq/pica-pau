@@ -1,7 +1,6 @@
 <div class="box">
-  <h1>Pica Pau</h1>
-  <p class="texto">Cadastro de Cliente</p>
-  <form class="form-box" [formGroup]="formCliente" (ngSubmit)="cadastrar()">
+  <p>Cadastro de Cliente</p>
+  <form class="form-box" [formGroup]="form" (ngSubmit)="cadastrar()">
     <input
       formControlName="nome"
       placeholder="Nome"
@@ -20,31 +19,31 @@
       placeholder="Data de Nascimento"
       type="date"
     />
-    <button type="submit" [disabled]="!formCliente.valid">Cadastrar</button>
+    <button type="submit" [disabled]="!form.valid">Cadastrar</button>
   </form>
-  <table>
+  <hr />
+
+  <table class="tabelinha">
     <tr>
-      <th>ID</th>
       <th>Nome</th>
-      <th>Idade</th>
       <th>Data de Nascimento</th>
+      <th>Idade</th>
       <th>CPF</th>
-      <th>Email</th>
-      <th>Documento Valido</th>
+      <th>CPF Válido</th>
+      <th>E-Mail</th>
+      <th>Ações</th>
     </tr>
     <tr *ngFor="let cliente of list">
-      <td>{{ cliente.id }}</td>
       <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.niver | date: "dd/MM/yyyy" }}</td>
       <td>{{ cliente.idade }}</td>
-      <td>{{ cliente.niver }}</td>
       <td>{{ cliente.documento }}</td>
-      <td>{{ cliente.email }}</td>
       <td>{{ cliente.documentoValido }}</td>
+      <td>{{ cliente.email }}</td>
+      <td>
+        <button (click)="editar(cliente)">Editar</button>
+        <button (click)="remover(cliente)">Remover</button>
+      </td>
     </tr>
   </table>
-  <p class="texto">
-    {{
-      formCliente.valid ? "Cadastrado com sucesso" : "Informações não validas"
-    }}
-  </p>
 </div>

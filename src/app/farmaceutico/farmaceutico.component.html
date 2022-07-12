@@ -18,6 +18,7 @@
       placeholder="Data de Nascimento"
       type="date"
     />
+    <button (click)="cegonha()">Cegonha</button>
     <button type="submit">Cadastrar</button>
   </form>
   <table>
@@ -38,6 +39,10 @@
       <td>{{ farmaceutico.documento }}</td>
       <td>{{ farmaceutico.ofertaDia }}</td>
       <td>{{ farmaceutico.documentoValido }}</td>
+      <td>
+        <button (click)="editar(farmaceutico)">Editar</button>
+        <button (click)="remover(farmaceutico)">Remover</button>
+      </td>
     </tr>
   </table>
   <p class="texto">

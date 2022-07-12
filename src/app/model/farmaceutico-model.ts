@@ -1,6 +1,10 @@
 export interface FarmaceuticoModel {
+  id: string;
   nome: string;
   niver: string;
-  email: string;
+  ofertaDia: string;
   cpf: string;
+  idade?: string;
+  documento?: string;
+  documentoValido?: boolean;
 }
