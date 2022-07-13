@@ -1,7 +1,8 @@
+import { FornecedorModel } from './../model/fornecedor-model';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FornecedorModel } from '../model/fornecedor-model';
+
 import { Fornecedor } from '../domain/fornecedor';
 
 @Injectable({
@@ -12,23 +13,27 @@ export class FornecedorService {
 
   constructor(private http: HttpClient) {}
 
-  cadastrar(fornecedorModel: FornecedorModel): Observable<Fornecedor> {
-    return this.http.post<Fornecedor>(this.url + 'cadastrar', fornecedorModel);
+  cegonha(): Observable<FornecedorModel> {
+    return this.http.post<FornecedorModel>(this.url + 'cadastrar-random', {});
   }
 
-  cegonha(): Observable<Fornecedor> {
-    return this.http.post<Fornecedor>(this.url + 'cadastrar-random', {});
+  cadastrar(model: FornecedorModel): Observable<FornecedorModel> {
+    return this.http.post<FornecedorModel>(this.url + 'cadastrar', model);
   }
 
-  consultar(): Observable<Fornecedor[]> {
-    return this.http.get<Fornecedor[]>(this.url + 'consultar');
+  alterar(model: FornecedorModel): Observable<FornecedorModel> {
+    return this.http.put<FornecedorModel>(this.url + 'alterar', model);
   }
 
-  editar(id: string, model: FornecedorModel): Observable<Fornecedor> {
-    return this.http.put<Fornecedor>(this.url + 'alterar/' + id, model);
+  consultar(): Observable<FornecedorModel[]> {
+    return this.http.get<FornecedorModel[]>(this.url + 'consultar');
   }
 
-  excluir(id: string): Observable<Fornecedor> {
-    return this.http.delete<Fornecedor>(this.url + 'remover/' + id);
+  consultarPorId(id: string): Observable<FornecedorModel[]> {
+    return this.http.get<FornecedorModel[]>(this.url + 'consultar/' + id);
+  }
+
+  remover(id: string): Observable<FornecedorModel> {
+    return this.http.delete<FornecedorModel>(this.url + 'remover/' + id);
   }
 }

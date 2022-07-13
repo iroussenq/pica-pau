@@ -1,7 +1,7 @@
 <div class="box">
   <h1>Pica Pau</h1>
-  <p class="texto" >Cadastro de Produto</p>
-  <form class="form-box" [formGroup]="formProduto" (ngSubmit)="cadastrar()">
+  <p class="texto">Cadastro de Produto</p>
+  <form class="form-box" [formGroup]="form" (ngSubmit)="cadastrar()">
     <input
       formControlName="nome"
       placeholder="Nome"
@@ -16,6 +16,21 @@
     />
     <button type="submit">Cadastrar</button>
   </form>
-  <p class="texto">Result: {{ formProduto.getRawValue() | json }}</p>
-  <p class="texto">Form é valido? {{ formProduto.valid ? "Sim" : "Não" }}</p>
+  <table class="tabelinha">
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Valor</th>
+    </tr>
+    <tr *ngFor="let produto of list">
+      <td>{{ produto.id }}</td>
+      <td>{{ produto.nome }}</td>
+      <td>{{ produto.valor }}</td>
+
+      <td>
+        <button (click)="editar(produto)">Editar</button>
+        <button (click)="remover(produto)">Remover</button>
+      </td>
+    </tr>
+  </table>
 </div>

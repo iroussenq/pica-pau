@@ -19,8 +19,39 @@
       placeholder="Data de Nascimento"
       type="date"
     />
-    <button type="submit">Cadastrar</button>
+    <button type="submit" [disabled]="!formFornecedor.valid">Cadastrar</button>
   </form>
-  <p class="texto">Result: {{ formFornecedor.getRawValue() | json }}</p>
-  <p class="texto">Form é valido? {{ formFornecedor.valid ? "Sim" : "Não" }}</p>
+  <hr />
+
+  <table class="tabelinha">
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Data de Nascimento</th>
+      <th>CNPJ</th>
+      <th>Produtos</th>
+      <th>Documento Valido</th>
+    </tr>
+    <tr *ngFor="let fornecedor of list">
+      <td>{{ fornecedor.id }}</td>
+      <td>{{ fornecedor.nome }}</td>
+      <td>{{ fornecedor.idade }}</td>
+      <td>{{ fornecedor.niver }}</td>
+      <td>{{ fornecedor.documento }}</td>
+      <td>{{ fornecedor.produtos }}</td>
+      <td>{{ fornecedor.documentoValido }}</td>
+      <td>
+        <button (click)="editar(fornecedor)">Editar</button>
+        <button (click)="remover(fornecedor)">Remover</button>
+      </td>
+    </tr>
+  </table>
+  <p class="texto">
+    {{
+      formFornecedor.valid
+        ? "Cadastrado com sucesso"
+        : "Informações não validas"
+    }}
+  </p>
 </div>

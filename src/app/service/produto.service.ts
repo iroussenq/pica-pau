@@ -1,8 +1,7 @@
+import { ProdutoModel } from './../model/produto-model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Produto } from '../domain/produto';
-import { ProdutoModel } from '../model/produto-model';
 
 @Injectable({
   providedIn: 'root',
@@ -12,19 +11,23 @@ export class ProdutoService {
 
   constructor(private http: HttpClient) {}
 
-  cadastrar(model: ProdutoModel): Observable<Produto> {
-    return this.http.post<Produto>(this.url + 'cadastrar', model);
+  cadastrar(model: ProdutoModel): Observable<ProdutoModel> {
+    return this.http.post<ProdutoModel>(this.url + 'cadastrar', model);
   }
 
-  alterar(id: string, model: ProdutoModel): Observable<Produto> {
-    return this.http.put<Produto>(this.url + 'alterar/' + id, model);
+  alterar(model: ProdutoModel): Observable<ProdutoModel> {
+    return this.http.put<ProdutoModel>(this.url + 'alterar', model);
   }
 
-  consultar(): Observable<Produto[]> {
-    return this.http.get<Produto[]>(this.url + 'consultar');
+  consultar(): Observable<ProdutoModel[]> {
+    return this.http.get<ProdutoModel[]>(this.url + 'consultar');
   }
 
-  remover(id: string): Observable<Produto> {
-    return this.http.delete<Produto>(this.url + 'remover/' + id);
+  consultarPorId(id: string): Observable<ProdutoModel[]> {
+    return this.http.get<ProdutoModel[]>(this.url + 'consultar/' + id);
+  }
+
+  remover(id: string): Observable<ProdutoModel> {
+    return this.http.delete<ProdutoModel>(this.url + 'remover/' + id);
   }
 }
