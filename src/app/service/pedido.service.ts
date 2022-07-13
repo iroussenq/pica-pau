@@ -1,4 +1,4 @@
-import { Pedido } from './../domain/pedido';
+import { PedidoModel } from './../model/pedido-model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -11,26 +11,33 @@ export class PedidoService {
 
   constructor(private http: HttpClient) {}
 
-  consultar(): Observable<Pedido[]> {
-    return this.http.get<Pedido[]>(this.url + 'consultar');
+  consultar(): Observable<PedidoModel[]> {
+    return this.http.get<PedidoModel[]>(this.url + 'consultar');
   }
 
-  cadastrar(idCliente: string, idFarmaceutico: string): Observable<Pedido> {
-    return this.http.post<Pedido>(this.url + 'cadastrar', {
-      idCliente,
-      idFarmaceutico,
+  cadastrar(
+    idCliente: string,
+    idFarmaceutico: string
+  ): Observable<PedidoModel> {
+    return this.http.post<PedidoModel>(this.url + 'cadastrar', {
+      cliente: { id: idCliente },
+      farmaceutico: { id: idFarmaceutico },
     });
   }
 
-  adicionarProduto(id: string, idProduto: string): Observable<Pedido> {
-    return this.http.put<Pedido>(this.url + 'adicionar-produto/' + id, {
+  adicionarProduto(id: string, idProduto: string): Observable<PedidoModel> {
+    return this.http.put<PedidoModel>(this.url + 'adicionar-produto/' + id, {
       idsProdutos: [idProduto],
     });
   }
 
-  pagar(id: string, valor: number): Observable<Pedido> {
-    return this.http.put<Pedido>(this.url + 'pagar/' + id, {
+  pagar(id: string, valor: number): Observable<PedidoModel> {
+    return this.http.put<PedidoModel>(this.url + 'pagar/' + id, {
       valor,
     });
+  }
+
+  remover(id: string): Observable<PedidoModel> {
+    return this.http.delete<PedidoModel>(this.url + 'remover/' + id);
   }
 }

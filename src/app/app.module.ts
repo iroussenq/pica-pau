@@ -1,3 +1,4 @@
+import { PedidoModule } from './pedido/pedido.module';
 import { ExtrasModule } from './extras/extras.module';
 import { ProdutoModule } from './produto/produto.module';
 import { FornecedorModule } from './fornecedor/fornecedor.module';
@@ -24,6 +25,7 @@ import { SobreModule } from './sobre/sobre.module';
     FarmaceuticoModule,
     FornecedorModule,
     ProdutoModule,
+    PedidoModule,
     ExtrasModule
   ],
   providers: [],

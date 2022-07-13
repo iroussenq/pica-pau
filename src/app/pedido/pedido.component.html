@@ -1,0 +1,74 @@
+<div class="box">
+  <p>Pedidos</p>
+  <form class="form-box" [formGroup]="formPedido" (ngSubmit)="cadastrar()">
+    <select formControlName="idCliente">
+      <option value="">Selecione um Cliente</option>
+      <option *ngFor="let item of clientes" value="{{ item.id }}">
+        {{ item.nome }}
+      </option>
+    </select>
+    <select formControlName="idFarmaceutico">
+      <option value="">Selecione um Farmacêutico</option>
+      <option *ngFor="let item of farmaceuticos" value="{{ item.id }}">
+        {{ item.nome }}
+      </option>
+    </select>
+    <button type="submit" [disabled]="!formPedido.valid">Cadastrar</button>
+  </form>
+  <hr />
+
+  <table class="tabelinha">
+    <tr>
+      <th>Farmacêutico</th>
+      <th>Cliente</th>
+      <th>Status</th>
+      <th>Data</th>
+      <th>Pagamento</th>
+      <th>Pago</th>
+      <th>Troco</th>
+      <th>Valor</th>
+      <th>Ações</th>
+    </tr>
+    <tr *ngFor="let item of pedidos">
+      <td>{{ item.farmaceutico.nome }}</td>
+      <td>{{ item.cliente.nome }}</td>
+      <td>{{ item.status }}</td>
+      <td>{{ item.data }}</td>
+      <td>{{ item.dataPagamento }}</td>
+      <td>{{ item.valorPago }}</td>
+      <td>{{ item.troco }}</td>
+      <td>{{ item.valor }}</td>
+      <td>
+        <button (click)="remover(item)">Remover</button>
+        <button
+          *ngIf="item.status === 'PENDENTE'"
+          (click)="clickAddProduto(item)"
+        >
+          Add Produto
+        </button>
+        <button *ngIf="item.status === 'PENDENTE'">Pagar</button>
+        <button>Detalhes</button>
+      </td>
+    </tr>
+  </table>
+
+  <div class="modal" *ngIf="formAddProduto.controls['idPedido'].value">
+    <form
+      class="form-box"
+      [formGroup]="formAddProduto"
+      (ngSubmit)="addProduto()"
+    >
+      <p class="fechar" (click)="resetForm()">X</p>
+      <select formControlName="idProduto">
+        <option value="">Selecione um Produto</option>
+        <option *ngFor="let item of produtos" value="{{ item.id }}">
+          {{ item.nome }}
+        </option>
+      </select>
+      <button type="submit" [disabled]="!formAddProduto.valid">
+        Adicionar
+      </button>
+    </form>
+    <div class="fundo"></div>
+  </div>
+</div>
